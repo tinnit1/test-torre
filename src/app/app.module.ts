@@ -7,6 +7,13 @@ import {StoreModule} from '@ngrx/store';
 import {appReducers} from './store/app.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment.prod';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {SharedService} from './services/shared/shared.service';
+import {EffectsModule} from '@ngrx/effects';
+import {effectsArray} from './store/effects';
+import {UserService} from './services/user/user.service';
+import {HttpClientModule} from '@angular/common/http';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -15,16 +22,20 @@ import {environment} from '../environments/environment.prod';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    // Modulo de material
+    MatSnackBarModule,
     // modulos NgRx
     // este modulo instancia y carga los reducers que esten en appReducers.
     StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot(effectsArray),
     // modulo para herramientas de desarrollo.
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
   ],
-  providers: [],
+  providers: [SharedService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
