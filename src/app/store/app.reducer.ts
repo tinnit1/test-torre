@@ -4,9 +4,11 @@ import * as reducers from './reducers';
 export interface AppState {
   ui: reducers.State;
   user: reducers.Userstate;
+  menuToggle: reducers.MenuState;
 }
 
 export const appReducers: ActionReducerMap<AppState> = {
   ui: reducers.loadingReducer,
-  user: reducers.userReducer
+  user: reducers.userReducer,
+  menuToggle: reducers.menuToggleReducer
 };

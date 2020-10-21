@@ -14,17 +14,26 @@ import {effectsArray} from './store/effects';
 import {UserService} from './services/user/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import {SharedModule} from './shared/shared.module';
+import {AppMaterialModule} from './app-material.module';
+import {PagesRoutingModule} from './pages/pages-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
+  exports: [
+    AppMaterialModule
+  ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    PagesRoutingModule,
     HttpClientModule,
+    SharedModule,
     // Modulo de material
-    MatSnackBarModule,
+    AppMaterialModule,
     // modulos NgRx
     // este modulo instancia y carga los reducers que esten en appReducers.
     StoreModule.forRoot(appReducers),
