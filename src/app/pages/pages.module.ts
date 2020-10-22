@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './profile/profile.component';
 import { PeopleComponent } from './people/people.component';
-import { PersonsComponent } from './persons/persons.component';
+import {AppMaterialModule} from '../app-material.module';
+import {BrowserModule} from '@angular/platform-browser';
 
 
 
 @NgModule({
-  declarations: [ProfileComponent, PeopleComponent, PersonsComponent],
+  declarations: [ProfileComponent, PeopleComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    AppMaterialModule
   ]
 })
 export class PagesModule { }

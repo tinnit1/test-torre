@@ -3,5 +3,10 @@
     "target": "https://bio.torre.co",
     "secure": false,
     "changeOrigin": true
+  },
+  "/opportunities/*": {
+    "target": "https://bio.torre.co",
+    "secure": false,
+    "changeOrigin": true
   }
 }

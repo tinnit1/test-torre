@@ -1,5 +1,6 @@
 import {Link} from './link';
 import {Flags} from './flags';
+import {Location} from './location';
 
 export class Person {
   constructor(

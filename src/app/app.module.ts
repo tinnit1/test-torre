@@ -16,7 +16,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {SharedModule} from './shared/shared.module';
 import {AppMaterialModule} from './app-material.module';
-import {PagesRoutingModule} from './pages/pages-routing.module';
+import {PagesModule} from './pages/pages.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,10 +29,11 @@ import {PagesRoutingModule} from './pages/pages-routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule,
     AppRoutingModule,
-    PagesRoutingModule,
     HttpClientModule,
     SharedModule,
+    PagesModule,
     // Modulo de material
     AppMaterialModule,
     // modulos NgRx

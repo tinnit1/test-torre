@@ -17,7 +17,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatDialogModule,
     MatSnackBarModule,
   ], exports: [
-    CommonModule,
     MatSidenavModule,
     MatMenuModule,
     MatCardModule,

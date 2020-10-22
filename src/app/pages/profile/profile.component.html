@@ -1,1 +1,63 @@
-<p>profile works!</p>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12 text-center">
+              <img [src]="user?.person.picture" height="150" alt="" class="img-circle">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center">
+              <p class="font-weight-bold mb-0 mt-2">{{user?.person.name}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row my-3">
+            <div class="col-2 d-flex justify-content-center align-items-center">
+              <i class="fas fa-book-open fa-2x"></i>
+            </div>
+            <div class="col-10">
+              <small>Professional Headline: </small>
+              <p class="font-weight-bold mb-0">{{user?.person.professionalHeadline}}</p>
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col-2 d-flex justify-content-center align-items-center">
+              <i class="fas fa-street-view fa-2x"></i>
+            </div>
+            <div class="col-10">
+              <small>Location: </small>
+              <p class="font-weight-bold mb-0">{{user?.person.location.name}}</p>
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col-2 d-flex justify-content-center align-items-center">
+              <i class="fas fa-book fa-2x"></i>
+            </div>
+            <div class="col-10">
+              <small>Languages: </small>
+              <p *ngFor="let leng of user?.languages" class="font-weight-bold mb-0">{{leng.language}} : {{leng.fluency}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10 offset-1">
+          <p class="font-weight-bold text-center">Summary:</p>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12">
+                  <p class="text-justify">{{user?.person.summaryOfBio}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

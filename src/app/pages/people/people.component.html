@@ -1,3 +1,21 @@
 <div class="container">
-  <p>people works!</p>
+  <div class="col-12" *ngFor="let pep of people">
+    <div class="card mb-2">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-4 text-center">
+            <img [src]="pep.picture" alt="" height="50" class="clip-animation">
+          </div>
+          <div class="col-4">
+            <p class="mb-1 font-weight-bold">{{pep.name}}</p>
+            <small>{{pep.professionalHeadline}}</small>
+          </div>
+          <div class="col-4">
+            <p>Is member</p>
+            <small><i [ngClass]="pep.member ? 'fas fa-user-check color-green': 'fas fa-user-times color-red'"></i></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
