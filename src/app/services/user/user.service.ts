@@ -12,7 +12,7 @@ export class UserService {
   constructor(public http: HttpClient, private sharedService: SharedService) { }
 
   getUser(username: string = 'juanpalacor'){
-    return this.http.get(`${this.sharedService.apiUrl}bios/${username}`)
+    return this.http.get(`https://bio.torre.co/api/bios/${username}`)
       .pipe(
         map((data: any) => data)
       );
