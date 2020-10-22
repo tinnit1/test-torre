@@ -68,11 +68,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test-torre:build"
+            "browserTarget": "test-torre:build",
+            "proxyConfig": "./proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test-torre:build:production"
+              "browserTarget": "test-torre:build:production",
+              "proxyConfig": "./proxy.conf.json"
             }
           }
         },
