@@ -1,13 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {StoreModule} from '@ngrx/store';
 import {appReducers} from './store/app.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment.prod';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedService} from './services/shared/shared.service';
 import {EffectsModule} from '@ngrx/effects';
 import {effectsArray} from './store/effects';
@@ -18,6 +18,7 @@ import {SharedModule} from './shared/shared.module';
 import {AppMaterialModule} from './app-material.module';
 import {PagesModule} from './pages/pages.module';
 import {RouterModule} from '@angular/router';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,12 @@ import {RouterModule} from '@angular/router';
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
   ],
-  providers: [SharedService, UserService],
+  providers: [SharedService, UserService,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
